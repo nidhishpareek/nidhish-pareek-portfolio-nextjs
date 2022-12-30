@@ -75,7 +75,7 @@ export const PopoverElement = ({ item, index }) => {
             <Flex alignContent={"baseline"}>
               <Flex>
                 {item.repositoryUrl !== "private" ? (
-                  <a href={item.repositoryUrl} target="_blank">
+                  <a href={item.repositoryUrl} target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon
                       icon={faGithubSquare}
                       size="2x"
@@ -97,8 +97,8 @@ export const PopoverElement = ({ item, index }) => {
                 )}
                 <a
                   href={item.liveUrl}
+                  rel="noopener noreferrer"
                   target="_blank"
-                  // rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon
                     icon={faExternalLinkSquareAlt}

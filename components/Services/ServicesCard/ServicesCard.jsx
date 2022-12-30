@@ -13,11 +13,14 @@ export const ServicesCard = ({ image, tags, title }) => {
     }); 
   }, []);
 const ChakraImage = chakra(Image, {
-  shouldForwardProp: (prop)=>['width', 'height','alt', 'src'].includes(prop)
+  shouldForwardProp: (prop)=>['width', 'height','alt', 'src','loader'].includes(prop)
 })
+const myLoader = ({ src, width, quality }) => {
+  return `${src}`
+}
   return (
     <div className="services-card" data-aos={"zoom-in"}>
-      <img  src={image} alt={title} width='65' height='65' />
+      <ChakraImage loader={myLoader} src={''} alt={title} width='65' height='65' />
       <h2>{title}</h2>
       <div className="tags">
         {tags?.map((tag, index) => (

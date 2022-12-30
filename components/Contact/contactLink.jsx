@@ -1,12 +1,12 @@
-import { Flex, Link, Text, useColorMode } from "@chakra-ui/react";
+import { chakra, Flex, Link, Text, useColorMode } from "@chakra-ui/react";
 import Image from 'next/image'
 
 export const ContactLink = ({ link, logo, name }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = (colorMode==='dark')
-  const hoverStyle = {
-    
-  }
+  const ChakraImage = chakra(Image, {
+    shouldForwardProp: (prop)=>['width', 'height','alt', 'src'].includes(prop)
+  })
   return (
     <Link href={link} style={{ textDecoration: "none" }} isExternal={true}>
       <Flex
@@ -26,7 +26,7 @@ export const ContactLink = ({ link, logo, name }) => {
       border:'1px solid rgba(255,255,255)'
     }}
       >
-        <Image src={logo} width='100' height='150'></Image>
+        <ChakraImage src={logo} width='100' alt={name + ' Link'} height='100'></ChakraImage>
         <Text>{name}</Text>
       </Flex>
     </Link>
