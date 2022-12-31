@@ -3,7 +3,7 @@ import '../styles/App.css'
 import "../components/Contact/contact.css";
 // import './index.css';
 import  '../components/index.css'
-import "../components/Button/Button.css";
+import "../components/Button/button.css";
 // import "./heading.css";
 import "../components/Heading/heading.css";
 // import "./home.css";
