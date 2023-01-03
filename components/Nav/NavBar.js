@@ -86,9 +86,9 @@ const NavBar = () => {
         </Flex>
 
         {/* Mobile */}
-        <label class="switch">
+        <label className="switch">
           <input type="checkbox" isChecked={isDark} onChange={toggleColorMode} />
-          <span class="slider"></span>
+          <span className="slider"></span>
         </label>
         <IconButton
           aria-label="Open Menu"
