@@ -8,7 +8,7 @@ const Skills = ({ skills }) => {
 
   return ( 
     <>
-      <MyHeading text="Skills 🤹" style={{ marginBottom: "3rem" }} />
+      <MyHeading text="Skills" style={{ marginBottom: "3rem" }} />
       <Flex gap={"40px"} wrap="wrap" justifyContent={"center"}>
         {skills.map((element, index) => {
           return (

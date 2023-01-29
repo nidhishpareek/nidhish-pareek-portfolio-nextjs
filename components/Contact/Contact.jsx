@@ -13,11 +13,12 @@ import { ContactData } from "../ContactMeData";
 // Components
 import { MyHeading } from "../Heading/Heading";
 import Button from "../Button/Button";
-import { Box, Flex,  Link, Text } from "@chakra-ui/react";
+import { Box, Flex,  Link, Text, useToast } from "@chakra-ui/react";
 import { ContactLink } from "./contactLink";
 import Image from "next/image";
 
 const Contact = () => {
+  const toast = useToast()
   useEffect(() => {
     Aos.init({
       duration: 2000,
@@ -48,6 +49,12 @@ const Contact = () => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           toggleNotification("Thanks, I will reply ASAP :)");
+          toast({
+            title: 'Thanks, I will reply ASAP :)',
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
         },
         (err) => {
           console.log("FAILED...", err);
@@ -57,8 +64,16 @@ const Contact = () => {
         toggleNotification(
           "Failed To send Email, Please reach out through LinkedIn"
         );
+        toast({
+          title: 'Failed To send Email',
+          description: 'Please reach out through LinkedIn',
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+        })
       });
   };
+
   // Email-js
 
   const clearForm = () => {
@@ -82,7 +97,7 @@ const Contact = () => {
 
   return (
     <section className="contact" name="contact" id="contact">
-      <MyHeading text="Contact 📲" style={{ marginBottom: "3rem" }} />
+      <MyHeading text="Contact" style={{ marginBottom: "3rem" }} />
 
       <Flex
         alignItems={"center"}
@@ -112,7 +127,6 @@ const Contact = () => {
         <div
           className="right"
           data-aos="fade-up"
-          // data-aos-anchor-placement="bottom-center"
           data-aos-duration="3000"
         >
           <form onSubmit={handleSubmit} ref={form}  >
@@ -139,7 +153,7 @@ const Contact = () => {
               placeholder="Message"
             ></textarea>
             <Button
-              text={loading ? "Sending..." : "Send"}
+              text={loading ? "" : "Send"}
               loading={loading}
               type="submit" 
             />

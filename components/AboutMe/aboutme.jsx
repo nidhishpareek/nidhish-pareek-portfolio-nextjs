@@ -21,7 +21,7 @@ const AboutMe = () => {
 
   return (
     <Box id="aboutme">
-      <MyHeading text="About Me 🫠" style={{ marginBottom: "3rem" }} />
+      <MyHeading text="About Me" style={{ marginBottom: "3rem" }} />
       <Flex
         width={"90%"}
         gap="30px"
