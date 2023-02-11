@@ -1,5 +1,4 @@
 import React from "react";
-// import "./services-card.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -12,13 +11,15 @@ export const ServicesCard = ({ icon, tags, title }) => {
       duration: 2000,
     }); 
   }, []);
+
 const ChakraImage = chakra(Image, {
-  shouldForwardProp: (prop)=>['width', 'height','alt', 'src','loader'].includes(prop)
+  shouldForwardProp: (prop)=>['width', 'height','alt', 'src'].includes(prop)
 })
 
   return (
     <div className="services-card" data-aos={"zoom-in"}>
-      <ChakraImage src={icon} alt={title} width='65' height='65' />
+      {/* <ChakraImage src={icon} alt={title} width='65' height='65' ></ChakraImage> */}
+      <Image  src={icon} alt={title} width='65' height='65'/>
       <h2>{title}</h2>
       <div className="tags">
         {tags?.map((tag, index) => (

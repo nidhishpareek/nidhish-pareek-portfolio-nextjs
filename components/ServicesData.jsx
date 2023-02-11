@@ -2,10 +2,10 @@ import frontend from '../public/images/service/frontend.png'
 import webicon from '../public/images/service/webicon.png'
 import solidworks from '../public/images/service/solidworks.png'
 
+
 const ServicesData = [
   {
     title: "Frontend Development",
-    //  "https://cdn.sanity.io/images/fxul9ln3/production/03a9f6fc484719e6ce9349f4a57aae9cb75bdcc9-600x600.svg",
     icon: frontend,
     tags: [
       "HTML5",
