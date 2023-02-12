@@ -20,7 +20,7 @@ const ServicesData = [
   },
   {
     title: "MERN Stack Development",
-    icon: "https://cdn.sanity.io/images/fxul9ln3/production/1ca784a9bf93dc47756fdb2cb8a33aeeca20fb75-128x128.svg",
+    icon: webicon,
     tags: [
       "MongoDB",
       "Express.js",
@@ -33,7 +33,7 @@ const ServicesData = [
   },
   {
     title: "Solidworks",
-    icon: "https://cdn.iconscout.com/icon/free/png-256/solidworks-282892.png",
+    icon: solidworks,
     tags: [
       "CAD",
       "Mechine Design",
