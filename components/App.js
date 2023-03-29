@@ -10,22 +10,31 @@ import NavBar from "./Nav/NavBar";
 import Skills from "./Skills/skills";
 import SkillData from "./SkillsData";
 import AboutMe from "./AboutMe/aboutme";
+import NewNavbar from "./NewNavBar/Navbar";
 
 function App() {
   return (
-    <Box maxW='1200px' justifyContent='center' margin='auto' className="App">
+    <>
       <ChakraProvider>
+        <NewNavbar />
         <NavBar></NavBar>
-        <div className="smallerApp">
-          <Home />
-          <AboutMe />
-          <Skills skills={SkillData} />
-          <Services services={ServicesData} />
-          <Portfolio projects={PortfolioData} />
-          <Contact />
-        </div>
+        <Box
+          maxW="1200px"
+          justifyContent="center"
+          margin="auto"
+          className="App"
+        >
+          <div className="smallerApp">
+            <Home />
+            <AboutMe />
+            <Skills skills={SkillData} />
+            <Services services={ServicesData} />
+            <Portfolio projects={PortfolioData} />
+            <Contact />
+          </div>
+        </Box>
       </ChakraProvider>
-    </Box>
+    </>
   );
 }
 

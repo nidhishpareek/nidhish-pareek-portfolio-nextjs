@@ -19,17 +19,17 @@ const Portfolio = ({ projects }) => {
     });
   }, []);
   return (
-    <section
-      className="portfolio"
-      name="portfolio"
-      id="portfolio"
-      
-    >
-    <div>
-      <MyHeading text="Projects"   style={{ marginBlock: "3rem" }} /></div>
-      <div className="row" >
+    <section className="project" name="project" id="project">
+      <div>
+        <MyHeading text="Projects" style={{ marginBlock: "3rem" }} />
+      </div>
+      <div className="row">
         {projects.map((item, index) => (
-          <PopoverElement key={index} index={index} item={item}></PopoverElement>
+          <PopoverElement
+            key={index}
+            index={index}
+            item={item}
+          ></PopoverElement>
         ))}
       </div>
     </section>
@@ -38,7 +38,8 @@ const Portfolio = ({ projects }) => {
 
 export default Portfolio;
 
-{/* <a
+{
+  /* <a
 href={item.liveUrl}
 target="_blank"
 rel="noopener noreferrer"
@@ -49,4 +50,5 @@ rel="noopener noreferrer"
   className="icon"
   title="Live view"
 />
-</a> */}
+</a> */
+}
