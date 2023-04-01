@@ -17,7 +17,6 @@ function App() {
     <>
       <ChakraProvider>
         <NewNavbar />
-        <NavBar></NavBar>
         <Box
           maxW="1200px"
           justifyContent="center"

@@ -1,7 +1,7 @@
-import { Link, Button, LinkBox } from "@chakra-ui/react";
+import { Link, Button, LinkBox, Box } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 
-const NavTag = ({ to, name, link, scheme }) => {
+const NavTag = ({ to, name, link, scheme, onClickEvent }) => {
   let style = {
     marginBlock: "5px",
     marginInline: "2px",
@@ -21,16 +21,27 @@ const NavTag = ({ to, name, link, scheme }) => {
     style = redStyle;
   }
 
-  return link ? (
-    <Button variant="ghost" style={style}>
-      <a isExternal href={link}>
-        Resume
-      </a>
-    </Button>
-  ) : (
-    <Button variant="ghost">
-      <ScrollLink to={to}>{name}</ScrollLink>
-    </Button>
+  return (
+    <>
+      {link ? (
+        <Button variant="ghost" style={style} onClick={onClickEvent}>
+          <a
+            isExternal
+            target={"_blank"}
+            rel={"external noreferrer"}
+            href={link}
+          >
+            Resume
+          </a>
+        </Button>
+      ) : (
+        <Button variant="ghost">
+          <ScrollLink onClick={onClickEvent} to={to}>
+            {name}
+          </ScrollLink>
+        </Button>
+      )}
+    </>
   );
 };
 export default NavTag;

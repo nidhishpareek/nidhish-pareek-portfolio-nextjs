@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from 'next/image'
+import Image from "next/image";
 
 // import NidhishDarkLogo from "../../images/NidhishDarkLogo1.png";
 import NidhishDarkLogo from "../../public/images/NidhishLogoSVG.svg";
@@ -11,7 +11,8 @@ import {
   useColorMode,
   Flex,
   Button,
-  IconButton, chakra
+  IconButton,
+  chakra,
 } from "@chakra-ui/react";
 import { resume_link } from "../ResumeLink";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -20,8 +21,9 @@ import NavTag from "./NavTag";
 
 const NavBar = () => {
   const ChakraImage = chakra(Image, {
-    shouldForwardProp: (prop)=>['width', 'height','alt', 'src'].includes(prop)
-  })
+    shouldForwardProp: (prop) =>
+      ["width", "height", "alt", "src"].includes(prop),
+  });
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const [display, changeDisplay] = useState("none");
@@ -46,7 +48,7 @@ const NavBar = () => {
         <Button
           as="a"
           variant="ghost"
-          _hover={{color: "transparent"}}
+          _hover={{ color: "transparent" }}
           aria-label="Home"
           my={5}
           w="fit-content"
@@ -54,7 +56,8 @@ const NavBar = () => {
         >
           {/* Nidhish */}
           <ChakraImage
-            src={NidhishDarkLogo} width='250'
+            src={NidhishDarkLogo}
+            width="250"
             height="100px"
           ></ChakraImage>
         </Button>
@@ -87,7 +90,11 @@ const NavBar = () => {
 
         {/* Mobile */}
         <label className="switch">
-          <input type="checkbox" isChecked={isDark} onChange={toggleColorMode} />
+          <input
+            type="checkbox"
+            isChecked={isDark}
+            onChange={toggleColorMode}
+          />
           <span className="slider"></span>
         </label>
         <IconButton
@@ -100,7 +107,6 @@ const NavBar = () => {
           display={["flex", "flex", "none", "none"]}
         />
         {/* <Switch color="green" isChecked={isDark} onChange={toggleColorMode} /> */}
-
       </Flex>
 
       {/* Mobile Content */}
@@ -123,7 +129,7 @@ const NavBar = () => {
             w="100%"
             onClick={() => scroll.scrollToTop()}
           >
-            <ChakraImage 
+            <ChakraImage
               src={isDark ? NidhishDarkLogo : NidhishLightLogo}
               height="70px"
             ></ChakraImage>
