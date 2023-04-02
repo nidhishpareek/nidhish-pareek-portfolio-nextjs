@@ -50,8 +50,7 @@ const NewNavbar = () => {
         position="fixed"
         bg={useColorModeValue("gray.100", "gray.900")}
         px={4}
-        w="100%"
-        paddingInline={"2rem"}
+        paddingInline={"1rem"}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
@@ -67,6 +66,7 @@ const NewNavbar = () => {
               height="100%"
               src={isDark ? NavLogoDark : NavLogoLight}
               alt="Nidhish Pareek NavBar Logo"
+              margin={"1rem solid red"}
             ></ChakraNextImage>
           </Box>
 

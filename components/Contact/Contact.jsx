@@ -3,7 +3,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 // Styles
 // import "./contact.css";
- 
+
 // Email Js
 import emailjs from "@emailjs/browser";
 
@@ -13,12 +13,12 @@ import { ContactData } from "../ContactMeData";
 // Components
 import { MyHeading } from "../Heading/Heading";
 import Button from "../Button/Button";
-import { Box, Flex,  Link, Text, useToast } from "@chakra-ui/react";
+import { Box, Flex, Link, Text, useToast } from "@chakra-ui/react";
 import { ContactLink } from "./contactLink";
 import Image from "next/image";
 
 const Contact = () => {
-  const toast = useToast()
+  const toast = useToast();
   useEffect(() => {
     Aos.init({
       duration: 2000,
@@ -50,11 +50,11 @@ const Contact = () => {
           console.log("SUCCESS!", response.status, response.text);
           toggleNotification("Thanks, I will reply ASAP :)");
           toast({
-            title: 'Thanks, I will reply ASAP :)',
-            status: 'success',
+            title: "Thanks, I will reply ASAP :)",
+            status: "success",
             duration: 9000,
             isClosable: true,
-          })
+          });
         },
         (err) => {
           console.log("FAILED...", err);
@@ -65,12 +65,12 @@ const Contact = () => {
           "Failed To send Email, Please reach out through LinkedIn"
         );
         toast({
-          title: 'Failed To send Email',
-          description: 'Please reach out through LinkedIn',
-          status: 'error',
+          title: "Failed To send Email",
+          description: "Please reach out through LinkedIn",
+          status: "error",
           duration: 9000,
           isClosable: true,
-        })
+        });
       });
   };
 
@@ -104,7 +104,7 @@ const Contact = () => {
         gap="30px"
         mb={"100px"}
         flexWrap="wrap"
-        h={'300px'}
+        h={"300px"}
         justifyContent={"center"}
       >
         {ContactData &&
@@ -120,16 +120,12 @@ const Contact = () => {
           })}
       </Flex>
 
-      <div className="content">
+      <div className="content" height="1dvh">
         <div className="left">
-          <Image src={shakeImage} alt="shake hands" width={'auto'} />
+          <Image src={shakeImage} alt="shake hands" width={"auto"} />
         </div>
-        <div
-          className="right"
-          data-aos="fade-up"
-          data-aos-duration="3000"
-        >
-          <form onSubmit={handleSubmit} ref={form}  >
+        <div className="right" data-aos="fade-up" data-aos-duration="3000">
+          <form onSubmit={handleSubmit} ref={form}>
             <input
               name="email"
               type="email"
@@ -155,7 +151,7 @@ const Contact = () => {
             <Button
               text={loading ? "" : "Send"}
               loading={loading}
-              type="submit" 
+              type="submit"
             />
             {notification && (
               <span style={{ color: "green", marginTop: "1rem" }}>
