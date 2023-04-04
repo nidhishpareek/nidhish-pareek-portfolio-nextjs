@@ -5,30 +5,20 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
   Button,
   Text,
   useColorMode,
-  chakra
 } from "@chakra-ui/react";
-// import "./portfolio.css";
-
+import { ChakraImage } from "../Misc/ChakraImage";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons/faExternalLinkSquareAlt";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons/faGithubSquare";
 import { faUserLock } from "@fortawesome/free-solid-svg-icons/faUserLock";
 import { Box, Flex } from "@chakra-ui/react";
-import Image from "next/image";
 export const PopoverElement = ({ item, index }) => {
-  // console.log(item)
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
-
-  const ChakraImage = chakra(Image, {
-    shouldForwardProp: (prop)=>['width', 'height','alt', 'src'].includes(prop)
-  })
 
   return (
     <Flex
@@ -38,14 +28,19 @@ export const PopoverElement = ({ item, index }) => {
       className="intermediate"
       width={["100%", "100%", "50%", "50%"]}
     >
-      <div
+      <Box
         width="fit-content"
         className="column"
         margin="auto"
         key={index}
         data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
       >
-        <ChakraImage src={item.image}  loading="lazy" alt={item.title} width='100%' height={'100%'}/>
+        <ChakraImage
+          src={item.image}
+          alt={item.title}
+          width="100%"
+          height={"100%"}
+        />
         <div className="overlay">
           <div className="left">
             <h3>{item.title}</h3>
@@ -61,21 +56,25 @@ export const PopoverElement = ({ item, index }) => {
             </a>
           </div>
         </div>
-      </div>
+      </Box>
       <Popover>
         <PopoverTrigger>
-          <Button width={"90%"}  variant="solid" colorScheme={"gray"}>
-            Project Info
+          <Button width={"90%"} variant="solid" colorScheme={"gray"}>
+            {item.title}
           </Button>
         </PopoverTrigger>
         <PopoverContent>
-          <PopoverArrow  />
-          <PopoverCloseButton size="2x"/>
+          <PopoverArrow />
+          <PopoverCloseButton size="2x" />
           <PopoverHeader fontWeight={"bold"}>
             <Flex alignContent={"baseline"}>
               <Flex>
                 {item.repositoryUrl !== "private" ? (
-                  <a href={item.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={item.repositoryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FontAwesomeIcon
                       icon={faGithubSquare}
                       size="2x"
@@ -116,9 +115,26 @@ export const PopoverElement = ({ item, index }) => {
             <>
               {item.techStack ? (
                 <>
-                  <Text fontStyle={"italic"} textDecoration='underline'>Tech-Stack-</Text>
-                  <Flex flexWrap={'wrap'} mt='10px' columnGap='10px' rowGap={'10px'}>
-                    {item.techStack.map((tech)=>(<Box borderRadius={'5px'} paddingInline={'5px'} key={tech} bg={isDark? '#4A5568':'#CBD5E0'}> <Text >{tech}</Text>  </Box>))}
+                  <Text fontStyle={"italic"} textDecoration="underline">
+                    Tech-Stack-
+                  </Text>
+                  <Flex
+                    flexWrap={"wrap"}
+                    mt="10px"
+                    columnGap="10px"
+                    rowGap={"10px"}
+                  >
+                    {item.techStack.map((tech) => (
+                      <Box
+                        borderRadius={"5px"}
+                        paddingInline={"5px"}
+                        key={tech}
+                        bg={isDark ? "#4A5568" : "#CBD5E0"}
+                      >
+                        {" "}
+                        <Text>{tech}</Text>{" "}
+                      </Box>
+                    ))}
                   </Flex>
                 </>
               ) : (
@@ -131,27 +147,3 @@ export const PopoverElement = ({ item, index }) => {
     </Flex>
   );
 };
-//Git repo asdfjl;sdfjl;
-// {
-//   item.repositoryUrl !== "private" ? (
-//     <a href={item.repositoryUrl} target="_blank">
-//       <FontAwesomeIcon
-//         icon={faGithubSquare}
-//         size="2x"
-//         className="icon"
-//         style={{ marginRight: "0.3em" }}
-//         title="Github Repo"
-//       />
-//     </a>
-//   ) : (
-//     <a href="#_" target="_blank">
-//       <FontAwesomeIcon
-//         icon={faUserLock}
-//         size="2x"
-//         className="icon"
-//         style={{ marginRight: "0.3em" }}
-//         title="Private Repo"
-//       />
-//     </a>
-//   );
-// }

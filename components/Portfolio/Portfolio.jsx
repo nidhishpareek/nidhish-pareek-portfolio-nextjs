@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
-
-// Styles
-// import "./portfolio.css";
+import React, { useEffect } from "react";
 
 // components
 import { MyHeading } from "..//Heading/Heading";
 
-// Icons
-
+// aos files
 import Aos from "aos";
 import "aos/dist/aos.css";
+
+// Icons
 import { PopoverElement } from "./portfolioPopover";
 
 const Portfolio = ({ projects }) => {
   useEffect(() => {
     Aos.init({
-      duration: 2000,
+      duration: 1500,
     });
   }, []);
   return (
@@ -37,18 +35,3 @@ const Portfolio = ({ projects }) => {
 };
 
 export default Portfolio;
-
-{
-  /* <a
-href={item.liveUrl}
-target="_blank"
-rel="noopener noreferrer"
->
-<FontAwesomeIcon
-  icon={faExternalLinkSquareAlt}
-  size="2x"
-  className="icon"
-  title="Live view"
-/>
-</a> */
-}

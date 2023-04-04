@@ -1,5 +1,5 @@
 import React from "react";
-import Image from 'next/image'
+import Image from "next/image";
 // SVG
 
 import man from "../../public/images/undraw_developer_activity_re_39tg.svg";
@@ -11,7 +11,8 @@ import { motion } from "framer-motion";
 
 // CSS
 import styles from "./home.module.css";
-import { Heading, Text, chakra } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/react";
+import { ChakraImage } from "../Misc/ChakraImage";
 
 const contentVariants = {
   initial: {
@@ -30,9 +31,6 @@ const contentVariants = {
 };
 
 const Home = () => {
-  const ChakraImage = chakra(Image, {
-    shouldForwardProp: (prop)=>['width', 'height','alt', 'src'].includes(prop)
-  })
   return (
     <section className={styles.homeContainer} id="home" name="home">
       <motion.div
@@ -42,7 +40,7 @@ const Home = () => {
         animate="animate"
       >
         <Heading>Hi There, (^人^)</Heading>
-        <Heading>I’m Nidhish Pareek</Heading>
+        <Heading>I’sm Nidhish Pareek</Heading>
         <Text>I am a MERN stack developer. </Text>
         <Link
           className={styles.homeBtn}
@@ -63,7 +61,7 @@ const Home = () => {
         animate={{ translateY: [-20, 0, -20, 0] }}
         transition={{ yoyo: Infinity, duration: 6 }}
       >
-        <ChakraImage src={man} zIndex={'1'} width='auto' alt="Developer" />
+        <ChakraImage src={man} zIndex={"1"} width="auto" alt="Developer" />
       </motion.div>
     </section>
   );

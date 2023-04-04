@@ -7,23 +7,14 @@ import NidhishDarkLogo from "../../public/images/NidhishLogoSVG.svg";
 import NidhishLightLogo from "../../public/images/NidhishLogoSVG.svg";
 // import './switchcss.css'
 
-import {
-  useColorMode,
-  Flex,
-  Button,
-  IconButton,
-  chakra,
-} from "@chakra-ui/react";
+import { useColorMode, Flex, Button, IconButton } from "@chakra-ui/react";
 import { resume_link } from "../ResumeLink";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { animateScroll as scroll, Link } from "react-scroll";
 import NavTag from "./NavTag";
+import { ChakraImage } from "../Misc/ChakraImage";
 
 const NavBar = () => {
-  const ChakraImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ["width", "height", "alt", "src"].includes(prop),
-  });
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const [display, changeDisplay] = useState("none");

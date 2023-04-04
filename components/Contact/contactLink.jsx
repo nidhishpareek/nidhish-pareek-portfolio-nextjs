@@ -1,13 +1,9 @@
-import { chakra, Flex, Link, Text, useColorMode } from "@chakra-ui/react";
-import Image from "next/image";
+import { Flex, Link, Text, useColorMode } from "@chakra-ui/react";
+import { ChakraImage } from "../Misc/ChakraImage";
 
 export const ContactLink = ({ link, logo, name }) => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
-  const ChakraImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ["width", "height", "alt", "src"].includes(prop),
-  });
   return (
     <Link href={link} style={{ textDecoration: "none" }} isExternal={true}>
       <Flex

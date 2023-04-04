@@ -1,14 +1,8 @@
 import Photo from "../../public/NidhishPic.jpeg";
 import { motion } from "framer-motion";
-import { chakra } from "@chakra-ui/react";
-import Image from "next/image";
+import { ChakraImage } from "../Misc/ChakraImage";
 
 const MyPhoto = () => {
-  const ChakraImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ["width", "height", "alt", "src"].includes(prop),
-  });
-
   return (
     <>
       <motion.div

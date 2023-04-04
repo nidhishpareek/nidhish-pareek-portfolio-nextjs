@@ -1,10 +1,8 @@
-import { Box, Flex, Text, chakra } from "@chakra-ui/react";
-import Image from "next/image";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { MyHeading } from "../Heading/Heading";
 import MyPhoto from "./PhotoLink.js";
 import { AboutMeContent } from "../AboutMeContent.js";
 import Aos from "aos";
-import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 const AboutMe = () => {
@@ -13,11 +11,6 @@ const AboutMe = () => {
       duration: 2000,
     });
   }, []);
-
-  const ChakraImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ["width", "height", "alt", "src"].includes(prop),
-  });
 
   return (
     <Box id="aboutme">
