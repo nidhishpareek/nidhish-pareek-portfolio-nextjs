@@ -39,9 +39,9 @@ const Home = () => {
         initial="initial"
         animate="animate"
       >
-        <Heading>Hi There, (^人^)</Heading>
-        <Heading>I’sm Nidhish Pareek</Heading>
-        <Text>I am a MERN stack developer. </Text>
+        <Heading>Hi There, </Heading>
+        <Heading>I’m Nidhish Pareek</Heading>
+        <Text> Full stack developer. </Text>
         <Link
           className={styles.homeBtn}
           to={"portfolio"}

@@ -112,35 +112,30 @@ export const PopoverElement = ({ item, index }) => {
           </PopoverHeader>
           <PopoverBody>
             <Text>{item.tagline}</Text>
-            <>
-              {item.techStack ? (
-                <>
-                  <Text fontStyle={"italic"} textDecoration="underline">
-                    Tech-Stack-
-                  </Text>
-                  <Flex
-                    flexWrap={"wrap"}
-                    mt="10px"
-                    columnGap="10px"
-                    rowGap={"10px"}
-                  >
-                    {item.techStack.map((tech) => (
-                      <Box
-                        borderRadius={"5px"}
-                        paddingInline={"5px"}
-                        key={tech}
-                        bg={isDark ? "#4A5568" : "#CBD5E0"}
-                      >
-                        {" "}
-                        <Text>{tech}</Text>{" "}
-                      </Box>
-                    ))}
-                  </Flex>
-                </>
-              ) : (
-                ""
-              )}
-            </>
+            {item.techStack && (
+              <>
+                <Text fontStyle={"italic"} textDecoration="underline">
+                  Tech-Stack-
+                </Text>
+                <Flex
+                  flexWrap={"wrap"}
+                  mt="10px"
+                  columnGap="10px"
+                  rowGap={"10px"}
+                >
+                  {item.techStack.map((tech) => (
+                    <Box
+                      borderRadius={"5px"}
+                      paddingInline={"5px"}
+                      key={tech}
+                      bg={isDark ? "#4A5568" : "#CBD5E0"}
+                    >
+                      <Text>{tech}</Text>{" "}
+                    </Box>
+                  ))}
+                </Flex>
+              </>
+            )}
           </PopoverBody>
         </PopoverContent>
       </Popover>
