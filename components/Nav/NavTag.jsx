@@ -25,12 +25,7 @@ const NavTag = ({ to, name, link, scheme, onClickEvent }) => {
     <>
       {link ? (
         <Button variant="ghost" style={style} onClick={onClickEvent}>
-          <a
-            isExternal
-            target={"_blank"}
-            rel={"external noreferrer"}
-            href={link}
-          >
+          <a target={"_blank"} rel={"external noreferrer"} href={link}>
             Resume
           </a>
         </Button>

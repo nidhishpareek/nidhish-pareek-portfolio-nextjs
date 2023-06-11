@@ -1,7 +1,7 @@
-import Photo from "../../public/NidhishPic.jpeg";
+// import Photo from "/public/NidhishPic.jpeg";
 import { motion } from "framer-motion";
 import { ChakraImage } from "../Misc/ChakraImage";
-
+import Photo from "/public/NidhishPareek.jpeg";
 const MyPhoto = () => {
   return (
     <>
