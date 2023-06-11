@@ -32,7 +32,7 @@ const NewNavbar = () => {
     home: { key: "home", name: "Home", scheme: "normal" },
     aboutme: { key: "aboutme", name: "About", scheme: "normal" },
     services: { key: "services", name: "Services", scheme: "normal" },
-    portfolio: { key: "portfolio", name: "Projects", scheme: "normal" },
+    portfolio: { key: "project", name: "Projects", scheme: "normal" },
     contact: { key: "contact", name: "Contact", scheme: "normal" },
     resume: {
       key: "contact",

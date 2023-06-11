@@ -12,6 +12,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { ChakraImage } from "../Misc/ChakraImage";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons/faExternalLinkSquareAlt";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons/faGithubSquare";
 import { faUserLock } from "@fortawesome/free-solid-svg-icons/faUserLock";
@@ -24,6 +25,7 @@ export const PopoverElement = ({ item, index }) => {
     <Flex
       justifyContent="center"
       alignItems={"center"}
+      mb="2rem"
       flexWrap="wrap"
       className="intermediate"
       width={["100%", "100%", "50%", "50%"]}
@@ -59,8 +61,9 @@ export const PopoverElement = ({ item, index }) => {
       </Box>
       <Popover>
         <PopoverTrigger>
-          <Button width={"90%"} variant="solid" colorScheme={"gray"}>
+          <Button width={"90%"} variant="ghost" gap="0.5rem">
             {item.title}
+            <AiOutlineInfoCircle />
           </Button>
         </PopoverTrigger>
         <PopoverContent>
