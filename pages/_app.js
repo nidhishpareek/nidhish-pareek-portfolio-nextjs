@@ -88,7 +88,10 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nidhish-pareek.netlify.app/" />
-
+        <meta
+          name="google-site-verification"
+          content="EfWT_v4-ps67VrV4zbQd9wPIKblUcMdBL0FHKP3kQNI"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
