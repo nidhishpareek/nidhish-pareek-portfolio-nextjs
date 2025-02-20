@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 // SVG
 
 import man from "../../public/images/undraw_developer_activity_re_39tg.svg";
@@ -44,7 +43,7 @@ const Home = () => {
         <Text> Full stack developer. </Text>
         <Link
           className={styles.homeBtn}
-          to={"portfolio"}
+          to="project"
           hashSpy={true}
           spy={true}
           smooth={true}

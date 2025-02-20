@@ -1,4 +1,3 @@
-// import "../styles/App.css";
 import ServicesData from "./ServicesData";
 import PortfolioData from "./PortfolioData";
 import Home from "./Home/Home";

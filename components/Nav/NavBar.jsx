@@ -1,11 +1,7 @@
 import { useState } from "react";
-import Image from "next/image";
 
-// import NidhishDarkLogo from "../../images/NidhishDarkLogo1.png";
 import NidhishDarkLogo from "../../public/images/NidhishLogoSVG.svg";
-// import NidhishLightLogo from "../../images/NidhishLightLogo.png";
 import NidhishLightLogo from "../../public/images/NidhishLogoSVG.svg";
-// import './switchcss.css'
 
 import { useColorMode, Flex, Button, IconButton } from "@chakra-ui/react";
 import { resume_link } from "../ResumeLink";

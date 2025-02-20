@@ -1,4 +1,4 @@
-import { Link, Button, LinkBox, Box } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 
 const NavTag = ({ to, name, link, scheme, onClickEvent }) => {
@@ -16,7 +16,7 @@ const NavTag = ({ to, name, link, scheme, onClickEvent }) => {
     color: "red",
     marginInline: "1rem",
   };
-  console.log(scheme);
+
   if (scheme === "red") {
     style = redStyle;
   }

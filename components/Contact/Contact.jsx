@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 // Styles
-// import "./contact.css";
 
 // Email Js
 import emailjs from "@emailjs/browser";
@@ -47,7 +46,6 @@ const Contact = () => {
       .send("service_umridqi", "template_8jcr003", values, "yv8odGIkO8jpyoaqP")
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
           toggleNotification("Thanks, I will reply ASAP :)");
           toast({
             title: "Thanks, I will reply ASAP :)",
@@ -57,7 +55,7 @@ const Contact = () => {
           });
         },
         (err) => {
-          console.log("FAILED...", err);
+          console.error("FAILED...", err);
         }
       )
       .catch(() => {
@@ -73,8 +71,6 @@ const Contact = () => {
         });
       });
   };
-
-  // Email-js
 
   const clearForm = () => {
     setValues(INITIAL_VALUES);
